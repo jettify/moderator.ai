@@ -2,9 +2,21 @@
 
 FLAGS=
 
+build:
+	yarn run build
 
 flake:
 	flake8 moderator setup.py
+
+test:
+	py.test -s -v $(FLAGS) ./tests/
+
+checkrst:
+	python setup.py check --restructuredtext
+
+cov cover coverage: flake checkrst
+	py.test -s -v --cov-report term --cov-report html --cov moderator ./tests
+	@echo "open file://`pwd`/htmlcov/index.html"
 
 clean:
 	rm -rf `find . -name __pycache__`
