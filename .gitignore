@@ -72,6 +72,7 @@ pids
 *.pid
 *.seed
 *.pid.lock
+cscope
 
 # Built files
 build
