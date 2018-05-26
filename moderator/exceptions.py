@@ -4,7 +4,7 @@ from aiohttp import web
 
 class AdminRESTError(web.HTTPError):
     status_code = 500
-    error = "Unknown Error"
+    error = 'Unknown Error'
 
     def __init__(self, message=None, status_code=None, **kwargs):
 
@@ -15,7 +15,7 @@ class AdminRESTError(web.HTTPError):
         if not message:
             message = self.error
 
-        msg_dict = {"error": message}
+        msg_dict = {'error': message}
 
         if kwargs:
             msg_dict['error_details'] = kwargs
@@ -26,9 +26,9 @@ class AdminRESTError(web.HTTPError):
 
 class ObjectNotFound(AdminRESTError):
     status_code = 404
-    error = "Object not found"
+    error = 'Object not found'
 
 
 class JsonValidaitonError(AdminRESTError):
     status_code = 400
-    error = "Invalid json payload"
+    error = 'Invalid json payload'

@@ -18,18 +18,18 @@ def load_config(fname):
 
 
 Comment = t.Dict({
-    t.Key("comment"): t.String,
-    t.Key("model_type", optional=True): t.Enum("LR", "SVM", "NN"),
+    t.Key('comment'): t.String,
+    t.Key('model_type', optional=True): t.Enum('LR', 'SVM', 'NN'),
 })
 CommentList = t.List(Comment, max_length=10)
 
 
 ModerateView = t.Dict({
-    t.Key("toxic"): t.Float[0:1],
-    t.Key("severe_toxic"): t.Float[0:1],
-    t.Key("obscene"): t.Float[0:1],
-    t.Key("insult"): t.Float[0:1],
-    t.Key("identity_hate"): t.Float[0:1],
+    t.Key('toxic'): t.Float[0:1],
+    t.Key('severe_toxic'): t.Float[0:1],
+    t.Key('obscene'): t.Float[0:1],
+    t.Key('insult'): t.Float[0:1],
+    t.Key('identity_hate'): t.Float[0:1],
 })
 ModerateList = t.List(ModerateView)
 
@@ -69,5 +69,5 @@ async def setup_executor(app, conf):
 
 
 def get_executor(request):
-    executor = request.app["executor"]
+    executor = request.app['executor']
     return executor
