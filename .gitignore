@@ -28,6 +28,11 @@ var/
 *.manifest
 *.spec
 
+.DS_Store
+.pytest_cache/
+cscope.files
+cscope.out
+
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
