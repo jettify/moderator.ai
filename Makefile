@@ -6,7 +6,7 @@ build:
 	yarn run build
 
 flake:
-	flake8 moderator setup.py
+	flake8 moderator model setup.py
 
 test:
 	py.test -s -v $(FLAGS) ./tests/

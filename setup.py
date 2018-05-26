@@ -21,16 +21,36 @@ def read_version():
 install_requires = [
     'aiohttp',
     'trafaret',
-    'aiohttp_jinja2',
     'pyyaml',
+    'numpy',
+    'pandas',
+    'scikit-learn',
+    'scipy',
+]
+
+
+classifiers = [
+    'License :: OSI Approved :: MIT License',
+    'Intended Audience :: Developers',
+    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3.5',
+    'Programming Language :: Python :: 3.6',
+    'Operating System :: POSIX',
+    'Development Status :: 3 - Alpha',
+    'Framework :: AsyncIO',
 ]
 
 
 setup(name='moderator',
+      classifiers=classifiers,
       version=read_version(),
-      description='Moderator API',
+      description='Moderator AI app: UI and API',
       platforms=['POSIX'],
+      author='Nikolay Novik',
+      author_email='nickolainovik@gmail.com',
+      url='https://github.com/jettify/moderator.ai',
       packages=find_packages(),
       include_package_data=True,
       install_requires=install_requires,
+      license='Apache 2',
       zip_safe=False)

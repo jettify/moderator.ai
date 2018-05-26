@@ -1,10 +1,16 @@
-Moderator Demo
-==============
+Moderator AI Demo
+=================
 
 Install the app::
 
     $ cd moderator
+    $ pip -r requirements-dev.txt
     $ pip install -e .
+
+Build UI::
+
+    $ yarn install
+    $ make build
 
 Run application::
 
@@ -18,9 +24,7 @@ Open browser::
 Requirements
 ============
 * aiohttp_
-* aiohttp_jinja2_
 
 
 .. _Python: https://www.python.org
 .. _aiohttp: https://github.com/aio-libs/aiohttp
-.. _aiohttp_jinja2: https://github.com/aio-libs/aiohttp_jinja2
