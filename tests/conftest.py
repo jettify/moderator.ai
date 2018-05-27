@@ -11,10 +11,11 @@ def loop(event_loop):
 
 @pytest.fixture
 def conf():
-    return load_config(PROJ_ROOT / 'config' / 'dev.yml')
+    return load_config(PROJ_ROOT / 'config' / 'config.yml')
 
 
 @pytest.fixture
 def api(loop, aiohttp_client, conf):
     app = loop.run_until_complete(init(loop, conf))
-    return loop.run_until_complete(aiohttp_client(app))
+    yield loop.run_until_complete(aiohttp_client(app))
+    loop.run_until_complete(app.shutdown())

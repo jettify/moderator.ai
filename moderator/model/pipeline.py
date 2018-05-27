@@ -95,4 +95,5 @@ def fit_model(dataset_path, model_path):
         pipeline = pickle.dump(pipeline, f)
 
 
-main()
+if __name__ == '__main__':
+    fit_model()

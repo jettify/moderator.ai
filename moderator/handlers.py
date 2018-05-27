@@ -3,7 +3,7 @@ import numpy as np
 from aiohttp import web
 
 from .worker import predict_proba
-from .utils import CommentList, ModerateList
+from .utils import CommentList, ModerateList, validate_payload
 
 
 class SiteHandler:
@@ -19,8 +19,8 @@ class SiteHandler:
         return web.FileResponse(path)
 
     async def moderate(self, request):
-        raw_data = await request.json()
-        data = CommentList(raw_data)
+        raw_data = await request.read()
+        data = validate_payload(raw_data, CommentList)
 
         features = np.array([d['comment'] for d in data])
         r = self._loop.run_in_executor
