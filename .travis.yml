@@ -10,7 +10,6 @@ install:
     - pip install codecov
     - pip install -r requirements-dev.txt
     - pip install -e .
-    - make cov
 
 script:
     make cov

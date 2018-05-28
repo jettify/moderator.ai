@@ -3,6 +3,10 @@ Moderator AI Demo
 .. image:: https://travis-ci.org/jettify/moderator.ai.svg?branch=master
     :target: https://travis-ci.org/jettify/moderator.ai
 
+
+.. image:: https://raw.githubusercontent.com/jettify/moderator.ai/master/docs/preview.png
+
+
 Install the app::
 
     $ cd moderator
