@@ -55,6 +55,7 @@ cover
 
 # Sphinx documentation
 docs/_build/
+static
 
 # PyBuilder
 target/
