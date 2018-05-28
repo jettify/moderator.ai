@@ -1,5 +1,7 @@
 Moderator AI Demo
 =================
+.. image:: https://travis-ci.org/jettify/moderator.ai.svg?branch=master
+    :target: https://travis-ci.org/jettify/moderator.ai
 
 Install the app::
 
