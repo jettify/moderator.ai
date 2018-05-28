@@ -8,7 +8,7 @@ python:
 install:
     - pip install --upgrade setuptools
     - pip install codecov
-    - pip -r requirements-dev.txt
+    - pip install -r requirements-dev.txt
     - pip install -e .
     - make cov
 
