@@ -61,7 +61,7 @@ async def setup_executor(app, conf):
 
     async def close_executor(app):
         # TODO: figureout timeout for shutdown
-        executor.shutdown()
+        executor.shutdown(wait=True)
 
     app.on_cleanup.append(close_executor)
     app['executor'] = executor

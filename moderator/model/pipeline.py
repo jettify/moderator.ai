@@ -61,7 +61,7 @@ def build_small_pipeline():
         analyzer='word',
         token_pattern=r'\w{1,}',
         stop_words='english',
-        ngram_range=(1, 3),
+        ngram_range=(1, 1),
         max_features=10000,
     )
 
@@ -75,9 +75,9 @@ def build_small_pipeline():
     return pipeline
 
 
-def fit_model(dataset_path, model_path):
-    train, targets = read_data()
-    # pipeline = build_pipeline()
+def build_model(dataset_path, model_path):
+    train, targets = read_data(dataset_path)
+
     pipeline = build_small_pipeline()
     pipeline.fit(train, targets)
 
@@ -87,13 +87,9 @@ def fit_model(dataset_path, model_path):
         targets,
         cv=5,
         scoring='roc_auc')
-    print(scores)
 
     score = np.mean(scores)
     name = 'pipeline_{score}.dat'.format(score=score)
+
     with open(name, 'wb') as f:
         pipeline = pickle.dump(pipeline, f)
-
-
-if __name__ == '__main__':
-    fit_model()
