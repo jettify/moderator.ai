@@ -8,7 +8,8 @@ Moderator AI Demo
 
 Simple application how to use aiohttp_ for machine learning project. Project is
 API and UI for classification of toxic and offensive comments, based on data
-from kaggle_ competition.
+from kaggle_ competition. Project can be used as example how to separate CPU
+intensive tasks from blocking event loop.
 
 
 Install the app::
