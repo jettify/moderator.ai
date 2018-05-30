@@ -6,6 +6,10 @@ Moderator AI Demo
 
 .. image:: https://raw.githubusercontent.com/jettify/moderator.ai/master/docs/preview.png
 
+Simple application how to use aiohttp_ for machine learning project. Project is
+API and UI for classification of toxic and offensive comments, based on data
+from kaggle_ competition.
+
 
 Install the app::
 
@@ -13,10 +17,6 @@ Install the app::
     $ pip -r requirements-dev.txt
     $ pip install -e .
 
-Build UI::
-
-    $ yarn install
-    $ make build
 
 Run application::
 
@@ -34,3 +34,4 @@ Requirements
 
 .. _Python: https://www.python.org
 .. _aiohttp: https://github.com/aio-libs/aiohttp
+.. _kaggle: https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge
