@@ -19,7 +19,7 @@ def read_data(dataset_path):
     return train_text, train_targets
 
 
-def build_pipeline():
+def build_slow_pipeline():
     seed = 1234
     word_vectorizer = TfidfVectorizer(
         sublinear_tf=True,
@@ -53,7 +53,7 @@ def build_pipeline():
     return pipeline
 
 
-def build_small_pipeline():
+def build_pipeline():
     seed = 1234
     word_vectorizer = TfidfVectorizer(
         sublinear_tf=True,
@@ -78,7 +78,7 @@ def build_small_pipeline():
 def build_model(dataset_path, model_path):
     train, targets = read_data(dataset_path)
 
-    pipeline = build_small_pipeline()
+    pipeline = build_pipeline()
     pipeline.fit(train, targets)
 
     scores = cross_val_score(
